@@ -1,0 +1,88 @@
+﻿Installing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Installing service KioskUpdater...
+Creating EventLog source KioskUpdater in log Application...
+Rolling back assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Restoring event log to previous state for source KioskUpdater.
+Installing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Installing service KioskUpdater...
+Service KioskUpdater has been successfully installed.
+Creating EventLog source KioskUpdater in log Application...
+Committing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Uninstalling assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Removing EventLog source KioskUpdater.
+Service KioskUpdater is being removed from the system...
+Service KioskUpdater was successfully removed from the system.
+Installing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Installing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Rolling back assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Rolling back assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Rolling back assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Installing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Installing service KioskUpdater...
+Service KioskUpdater has been successfully installed.
+Creating EventLog source KioskUpdater in log Application...
+Committing assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
