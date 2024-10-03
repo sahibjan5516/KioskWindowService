@@ -18,7 +18,7 @@ namespace KioskUpdater
 
         
 
-        public Footer GetApiFooterDataAsync()
+        public List<Footer> GetApiFooterDataAsync()
         {
             try
             {
@@ -41,7 +41,8 @@ namespace KioskUpdater
                 {
                     // Read the response content
                     string responseContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-                    return JsonConvert.DeserializeObject<List<Footer>>(responseContent).FirstOrDefault(h => h.isActive == true);
+                  //  return JsonConvert.DeserializeObject<List<Footer>>(responseContent).FirstOrDefault(h => h.isActive == true);
+                    return JsonConvert.DeserializeObject<List<Footer>>(responseContent);
                 }
                 else
                 {
@@ -56,7 +57,7 @@ namespace KioskUpdater
                 return null;
             }
         }
-        public Header GetApiHeaderDataAsync()
+        public List<Header> GetApiHeaderDataAsync()
         {
             try
             {
@@ -79,7 +80,8 @@ namespace KioskUpdater
                 {
                     // Read the response content
                     string responseContent =  response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-                    return JsonConvert.DeserializeObject<List<Header>>(responseContent).FirstOrDefault(h=>h.isActive==true);
+                  //  return JsonConvert.DeserializeObject<List<Header>>(responseContent).FirstOrDefault(h=>h.isActive==true);
+                    return JsonConvert.DeserializeObject<List<Header>>(responseContent);
                 }
                 else
                 {

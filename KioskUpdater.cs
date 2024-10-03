@@ -61,25 +61,25 @@ namespace KioskUpdater
                 var apiHelper = new ApiHelper();
                 var ApiHeaders = apiHelper.GetApiHeaderDataAsync();
                 var ApiFooters = apiHelper.GetApiFooterDataAsync();
-                var ApiVideos = apiHelper.GetApiVideoDataAsync();
+                //var ApiVideos = apiHelper.GetApiVideoDataAsync();
                 var ApiProjects = apiHelper.GetApiProjectDataAsync();
 
                 var databaseHelper = new DatabaseHelper();
-                
-                
+                databaseHelper.InitializeDatabase();
+
                 //its for delete existing all records
                 //databaseHelper.DeleteRecords();
 
                 var comparer = new Comparer();
                 comparer.CompareAndDownloadHeaderImages(ApiHeaders);
                 comparer.CompareAndDownloadFooterImages(ApiFooters);
-                comparer.CompareAndDownloadVideo(ApiVideos);
+               // comparer.CompareAndDownloadVideo(ApiVideos);
                 comparer.CompareAndDownloadProject(ApiProjects);
 
 
                 databaseHelper.UpdateLocalDatabaseHeader(ApiHeaders);
                 databaseHelper.UpdateLocalDatabaseFooter(ApiFooters);
-                databaseHelper.UpdateLocalDatabaseVideo(ApiVideos);
+              //  databaseHelper.UpdateLocalDatabaseVideo(ApiVideos);
                 databaseHelper.UpdateLocalDatabaseProject(ApiProjects);
 
 

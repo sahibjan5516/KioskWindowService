@@ -17,13 +17,34 @@ namespace KioskUpdater
         public void InitializeDatabase()
         {
             // Initialize SQLite connection and create tables if they do not exist
-            using (var connection = new SQLiteConnection(dbFilePath))
+            //using (var connection = new SQLiteConnection(dbFilePath))
+            //{
+            //    connection.CreateTable<Footer>();
+            //    connection.CreateTable<Header>();
+            //    connection.CreateTable<Video>();
+            //    connection.CreateTable<Project>();
+            //}
+
+
+            // Check if the database file exists
+            if (!File.Exists(dbFilePath))
             {
-                connection.CreateTable<Footer>();
-                connection.CreateTable<Header>();
-                connection.CreateTable<Video>();
-                connection.CreateTable<Project>();
+                //  ///// If the file does not exist, create the SQLite database and initialize tables
+                using (var connection = new SQLiteConnection(dbFilePath))
+                {
+                    connection.CreateTable<Footer>();
+                    connection.CreateTable<Header>();
+                   // connection.CreateTable<Video>();
+                    connection.CreateTable<Project>();
+                    connection.CreateTable<KioskDonationCollection>();
+                }
             }
+            else
+            {
+                ////////  Log or handle the case where the database already exists(optional)
+                Console.WriteLine("Database already exists.");
+            }
+
         }
         public void DeleteRecords()
         {
@@ -34,7 +55,8 @@ namespace KioskUpdater
                 connection.DeleteAll<Footer>();
                 connection.DeleteAll<Header>();
                 connection.DeleteAll<Video>();
-                connection.DeleteAll<Project>();
+                connection.DeleteAll<Project>(); 
+                connection.DeleteAll<KioskDonationCollection>(); 
             }
         }
         public List<Footer> GetFooters()
@@ -79,54 +101,57 @@ namespace KioskUpdater
             // Retrieve all records from tbl_Videos
             using (var connection = new SQLiteConnection(dbFilePath))
             {
-                return connection.Table<KioskDonationCollection>().Where(x=> x.IsProcessed==false || x.IsProcessed==null).ToList();
-               // return connection.Table<KioskDonationCollection>().ToList();
+                return connection.Table<KioskDonationCollection>().Where(x => x.IsProcessed == false || x.IsProcessed == null).ToList();
+                // return connection.Table<KioskDonationCollection>().ToList();
             }
         }
 
-        public void UpdateLocalDatabaseHeader(Header apiData)
+        public void UpdateLocalDatabaseHeader(List<Header> apiRow)
         {
             var localData = GetHeaders();
             var apiHelper = new ApiHelper();
             using (var db = new SQLiteConnection(dbFilePath))
             {
-
-                var localRow = localData.Find(l => l.Id == apiData.Id);
-                if (localRow != null)
+                foreach (var apiData in apiRow)
                 {
-                    if (apiData.centerImagePath != localRow.centerImagePath)
+                    var localRow = localData.Find(l => l.Id == apiData.Id);
+                    if (localRow != null)
                     {
-                        db.Update(apiData);
+                        if (apiData.centerImagePath != localRow.centerImagePath)
+                        {
+                            db.Update(apiData);
 
+                        }
                     }
-                }
-                else
-                {
-                    db.Insert(apiData);
+                    else
+                    {
+                        db.Insert(apiData);
+                    }
                 }
 
             }
         }
-        public void UpdateLocalDatabaseFooter(Footer apiData)
+        public void UpdateLocalDatabaseFooter(List<Footer> apiRow)
         {
             var localData = GetFooters();
 
             using (var db = new SQLiteConnection(dbFilePath))
             {
-
-                var localRow = localData.Find(l => l.Id == apiData.Id);
-                if (localRow != null)
+                foreach (var apiData in apiRow)
                 {
-                    if (apiData.centerImagePath != localRow.centerImagePath || apiData.projectNameAr != localRow.projectDescriptionAr || apiData.projectDescriptionEn != localRow.projectDescriptionEn || apiData.projectDescriptionAr != localRow.projectDescriptionAr || apiData.projectDescriptionEn != localRow.projectDescriptionEn || apiData.projectId != localRow.projectId || apiData.totalCost != localRow.totalCost || apiData.collectionAmount != localRow.collectionAmount || apiData.isActive != localRow.isActive)
+                    var localRow = localData.Find(l => l.Id == apiData.Id);
+                    if (localRow != null)
                     {
-                        db.Update(apiData);
+                        if (apiData.centerImagePath != localRow.centerImagePath || apiData.projectNameAr != localRow.projectDescriptionAr || apiData.projectDescriptionEn != localRow.projectDescriptionEn || apiData.projectDescriptionAr != localRow.projectDescriptionAr || apiData.projectDescriptionEn != localRow.projectDescriptionEn || apiData.projectId != localRow.projectId || apiData.totalCost != localRow.totalCost || apiData.collectionAmount != localRow.collectionAmount || apiData.isActive != localRow.isActive)
+                        {
+                            db.Update(apiData);
+                        }
+                    }
+                    else
+                    {
+                        db.Insert(apiData);
                     }
                 }
-                else
-                {
-                    db.Insert(apiData);
-                }
-
             }
         }
         public void UpdateLocalDatabaseVideo(List<Video> apiData)
@@ -180,7 +205,7 @@ namespace KioskUpdater
 
 
 
- 
+
 
 
 
@@ -190,28 +215,28 @@ namespace KioskUpdater
         {
             // Fetch local data from SQLite
             var localData = GetKioskDonationCollections();
-          
+
             using (var db = new SQLiteConnection(dbFilePath))
             {
-               // db.Open(); // Open the SQLite connection once at the start
+                // db.Open(); // Open the SQLite connection once at the start
 
                 foreach (var apiRow in apiData)
                 {
                     // Check if the local data contains a record with the same CollectionID
-                    var localRow = localData.Find(l => l.KioskId == apiRow.KioskId && l.ApprovalCode==apiRow.ApprovalCode);
+                    var localRow = localData.Find(l => l.KioskId == apiRow.KioskId && l.ApprovalCode == apiRow.ApprovalCode);
 
                     if (localRow != null)
                     {
-                        localRow.IsProcessed= true;
+                        localRow.IsProcessed = true;
                         localRow.ProcessDate = DateTime.Now;
                         db.Update(localRow);
                         // If the record exists, update the IsProcessed field
 
                     }
-                    
+
                 }
 
-                 
+
             }
         }
 

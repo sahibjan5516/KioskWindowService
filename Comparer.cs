@@ -15,7 +15,7 @@ namespace KioskUpdater
         private string directoryImagePath = ConfigurationManager.AppSettings["imagedistinationpath"];
         private string sourcepath = ConfigurationManager.AppSettings["sourcepath"];
                
-        public void CompareAndDownloadHeaderImages(Header ApiHeaders)
+        public void CompareAndDownloadHeaderImages(List<Header> ApiHeader)
         {
             
             try
@@ -23,13 +23,14 @@ namespace KioskUpdater
                 var apiHelper = new ApiHelper();                
 
                 List<string> fileNames = GetFileNames(directoryImagePath);
+                foreach (Header ApiHeaders in ApiHeader.ToList())
+                {
 
-                              
                     if (!fileNames.Contains(ApiHeaders.centerImage))
                     {
                         apiHelper.DownloadFileAsync(sourcepath + ApiHeaders.centerImage, ConfigurationManager.AppSettings["imagedistinationpath"] + ApiHeaders.centerImage);
-                    }                   
-               
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -38,7 +39,7 @@ namespace KioskUpdater
 
         }
 
-        public void CompareAndDownloadFooterImages(Footer ApiFooters)
+        public void CompareAndDownloadFooterImages(List<Footer> ApiFooter)
         {
 
             try
@@ -47,13 +48,14 @@ namespace KioskUpdater
                 
 
                 List<string> fileNames = GetFileNames(directoryImagePath);
-                          
-                   
+
+                foreach (Footer ApiFooters in ApiFooter.ToList())
+                {
                     if (!fileNames.Contains(ApiFooters.centerImage))
                     {
                         apiHelper.DownloadFileAsync(sourcepath + ApiFooters.centerImage, ConfigurationManager.AppSettings["imagedistinationpath"] + ApiFooters.centerImage);
-                    }                 
-             
+                    }
+                }
             }
             catch (Exception ex)
             {
