@@ -86,3 +86,11 @@ Affected parameters are:
    logtoconsole = 
    logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
    assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Uninstalling assembly 'E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.InstallLog
+   assemblypath = E:\Kiosk\KioskUpdater\KioskUpdater\bin\Debug\KioskUpdater.exe
+Removing EventLog source KioskUpdater.
+Service KioskUpdater is being removed from the system...
+Service KioskUpdater was successfully removed from the system.

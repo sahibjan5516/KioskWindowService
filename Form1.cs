@@ -31,7 +31,7 @@ namespace KioskUpdater
             var ApiProjects = apiHelper.GetApiProjectDataAsync();
 
             var databaseHelper = new DatabaseHelper();
-            databaseHelper.DeleteRecords();
+          //  databaseHelper.DeleteRecords();
             var comparer = new Comparer();
             comparer.CompareAndDownloadHeaderImages(ApiHeaders);
             comparer.CompareAndDownloadFooterImages(ApiFooters);

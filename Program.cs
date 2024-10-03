@@ -16,19 +16,19 @@ namespace KioskUpdater
         /// </summary>
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            //// Create and run your form
-            //Application.Run(new Form1());
+            // Create and run your form
+            Application.Run(new Form1());
 
 
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
-            {
-                new KioskUpdater()
-            };
-            ServiceBase.Run(ServicesToRun);
+            //ServiceBase[] ServicesToRun;
+            //ServicesToRun = new ServiceBase[]
+            //{
+            //    new KioskUpdater()
+            //};
+            //ServiceBase.Run(ServicesToRun);
         }
     }
 }
