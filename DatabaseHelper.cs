@@ -17,33 +17,34 @@ namespace KioskUpdater
         public void InitializeDatabase()
         {
             // Initialize SQLite connection and create tables if they do not exist
-            //using (var connection = new SQLiteConnection(dbFilePath))
-            //{
-            //    connection.CreateTable<Footer>();
-            //    connection.CreateTable<Header>();
-            //    connection.CreateTable<Video>();
-            //    connection.CreateTable<Project>();
-            //}
+            using (var connection = new SQLiteConnection(dbFilePath))
+            {
+                connection.CreateTable<Footer>();
+                connection.CreateTable<Header>();
+                connection.CreateTable<Video>();
+                connection.CreateTable<Project>();
+                connection.CreateTable<KioskDonationCollection>();
+            }
 
 
             // Check if the database file exists
-            if (!File.Exists(dbFilePath))
-            {
-                //  ///// If the file does not exist, create the SQLite database and initialize tables
-                using (var connection = new SQLiteConnection(dbFilePath))
-                {
-                    connection.CreateTable<Footer>();
-                    connection.CreateTable<Header>();
-                   // connection.CreateTable<Video>();
-                    connection.CreateTable<Project>();
-                    connection.CreateTable<KioskDonationCollection>();
-                }
-            }
-            else
-            {
-                ////////  Log or handle the case where the database already exists(optional)
-                Console.WriteLine("Database already exists.");
-            }
+            //if (!File.Exists(dbFilePath))
+            //{
+            //    //  ///// If the file does not exist, create the SQLite database and initialize tables
+            //    using (var connection = new SQLiteConnection(dbFilePath))
+            //    {
+            //        connection.CreateTable<Footer>();
+            //        connection.CreateTable<Header>();
+            //       // connection.CreateTable<Video>();
+            //        connection.CreateTable<Project>();
+            //        connection.CreateTable<KioskDonationCollection>();
+            //    }
+            //}
+            //else
+            //{
+            //    ////////  Log or handle the case where the database already exists(optional)
+            //    Console.WriteLine("Database already exists.");
+            //}
 
         }
         public void DeleteRecords()
