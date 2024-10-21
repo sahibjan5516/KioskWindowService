@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CyslS0yhEoHMpUTjOMFPEP40krFRGvB0+dPc+pN9j8g=</dsig:DigestValue>
+        <dsig:DigestValue>Rg8yimOA9i7sZWviscETXBl/dceN1EV/IbWBm8YSZSU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -233,13 +233,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="KioskUpdater.exe.config" size="4262">
+  <file name="KioskUpdater.exe.config" size="4642">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jmTtPTv5N5sOZHRIxWvBPs3IKiUi4QgwnQ3lr8Oy6cg=</dsig:DigestValue>
+      <dsig:DigestValue>ScsejqOmcQfAGvTumkUO9sjI6YWulHdYsUXAukcrerY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

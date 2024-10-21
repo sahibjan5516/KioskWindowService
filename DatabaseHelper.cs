@@ -203,15 +203,6 @@ namespace KioskUpdater
             }
         }
 
-
-
-
-
-
-
-
-
-
         public void UpdateKioskDonationCollection(List<ReturnModel> apiData)
         {
             // Fetch local data from SQLite

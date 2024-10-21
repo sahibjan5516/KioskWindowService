@@ -56,7 +56,8 @@ namespace KioskUpdater
                 // Post the JSON data to the API
                 HttpResponseMessage response = client.PostAsync("/services/SHJC/process", content).GetAwaiter().GetResult();
                 Thread.Sleep(60000);
-                if (response.IsSuccessStatusCode)
+                
+                 if (response.IsSuccessStatusCode)
                 {
 
                     string resultContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();

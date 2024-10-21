@@ -10,7 +10,7 @@ namespace KioskUpdater
 {
     internal static class Program
     {
-        
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -25,9 +25,9 @@ namespace KioskUpdater
 
             //ServiceBase[] ServicesToRun;
             //ServicesToRun = new ServiceBase[]
-            //{
+            //    {
             //    new KioskUpdater()
-            //};
+            //    };
             //ServiceBase.Run(ServicesToRun);
         }
     }
